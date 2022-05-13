@@ -6,7 +6,6 @@ import os
 import glob
 import cv2
 import matplotlib.pyplot as plt
-#from keras.models import Sequential
 from keras.models import Model
 from keras.layers import Input, Dense, BatchNormalization, LeakyReLU, Flatten
 from keras.layers import Conv2D, AveragePooling2D
@@ -17,9 +16,9 @@ import keras.backend as K
 
 
 ## Define File Locations (Images, Spectra, and CNN Model Save)
-img_path = '/Users/kara-test/Desktop/UCLA/Raman Lab/Physics-drivenNN/Training Data/Images_interpolate_train/*.png'
-spectra_path = '/Users/kara-test/Desktop/UCLA/Raman Lab/Physics-drivenNN/cross_length_interpolate_train.csv'
-save_dir = '/Users/kara-test/Desktop/UCLA/Raman Lab/Physics-drivenNN/model_interpolate_physics.h5'
+img_path = '/.../*.png'
+spectra_path = '/.../cross_length_interpolate_train.csv'
+save_dir = '/.../model.h5'
 
 ## Load Images (CNN Input)
 def loadImages(path):
@@ -44,25 +43,6 @@ CNN_output = np.array(np.float32(pd.read_csv(spectra_path, header = 0, index_col
 
 def custom_mean_squared_error(i):
     def loss(y_true, y_pred):
-        # np.array(eng.Fresnel_out_of_range_test(d1, d2, d3, d4))
-        # outputArray = np.array(eng.Fresnel_out_of_range_test(d1, d2, d3, d4))
-        # y_fresnel_batch = []
-        # for j in range(tf.shape(i[0])):
-        #     y_fresnel = np.array(eng.Fresnel_out_of_range_test(i[j]))
-        #     y_fresnel_batch.append(y_fresnel)
-        #     y_fresnel_batch = np.array(y_fresnel_batch)
-        # data_loss = K.mean(K.square(y_fresnel - y_pred), axis=-1)
-        # # data_loss = tf.Print(data_loss, [data_loss])
-        # # data_loss = tf.Print(data_loss, [y_true])
-        # # test = np.ones((10,4))
-        # test = np.arange(1,5)*np.ones((10,4))        
-        # data_loss = tf.Print(data_loss, [tf.shape(i)[0]])
-        
-        #HERE, make sure y_fresnel is returned properly
-        #other papers have ground truth not correlated to data
-        #find a residual!!  don't do the same comparison twice, y_true same as y_fresnel
-        #verify spectrum against ___
-
         total_loss = K.mean(K.square(y_true - y_pred), axis=-1)
         #total_loss = data_loss 
         return total_loss
