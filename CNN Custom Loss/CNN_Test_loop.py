@@ -7,7 +7,7 @@ import cv2
 
 # predict the spectrum from the model
 from keras.models import load_model
-model = load_model('/Users/kara-test/Desktop/UCLA/Raman Lab/Physics-drivenNN/model_interpolate_physics.h5', compile = False)
+model = load_model('/.../model.h5', compile = False)
 
 # load img
 def loadImages(path):
@@ -25,14 +25,14 @@ def loadImages(path):
     return loadedImages
 
 # path = local path of images
-path = '/Users/kara-test/Desktop/UCLA/Raman Lab/Physics-drivenNN/Training Data/Images_interpolate_train/*.png'
+path = '/.../Images_test/*.png'
 imgs = loadImages(path) # loaded images
 imgs = np.array(imgs)
 #imgs = np.squeeze(CNN_input_test)
 
 for i in range(len(imgs)): 
     
-    y = np.array(pd.read_csv('/Users/kara-test/Desktop/UCLA/Raman Lab/Physics-drivenNN/cross_length_interpolate_train.csv', header = 0, index_col=0))
+    y = np.array(pd.read_csv('/.../cross_length_test.csv', header = 0, index_col=0))
     #y = CNN_output_test
     x = np.arange(4, 12, 0.01).reshape([1,800])
     predictions_test1 = model.predict(imgs[i].reshape(-1,128,128,1))
@@ -47,5 +47,5 @@ for i in range(len(imgs)):
     plt.xlim(4,12)
     plt.ylim(0,1)
     #plt.legend()
-    plt.savefig('/Users/kara-test/Desktop/UCLA/Raman Lab/Physics-drivenNN/test_results/'+str(i)+'.png', bbox_inches="tight")
+    plt.savefig('/.../test_results/'+str(i)+'.png', bbox_inches="tight")
     plt.show()
