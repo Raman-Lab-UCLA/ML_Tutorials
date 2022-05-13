@@ -7,10 +7,9 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 
-
 # load the dataset
-inputExcel = np.array(np.float32(pd.read_csv('C:/Users/cyyeu/Documents/Python/ANN/Fresnel/FresnelInput.csv')))
-outputExcel = np.array(np.float32(pd.read_csv('C:/Users/cyyeu/Documents/Python/ANN/Fresnel/FresnelOutput.csv')))
+inputExcel = np.array(np.float32(pd.read_csv('C:/.../FresnelInput.csv')))
+outputExcel = np.array(np.float32(pd.read_csv('C:/.../FresnelOutput.csv')))
 
 # split into training and test data
 input_train, input_test, output_train, output_test = train_test_split(inputExcel, outputExcel, test_size = 0.1, random_state = 42)
@@ -32,7 +31,6 @@ model.compile(loss='mean_squared_error', optimizer='adam', metrics=['accuracy'])
 
 # fit the keras model on the dataset
 es = EarlyStopping(monitor='val_loss', min_delta=0, patience=25, verbose=0, mode='auto', restore_best_weights=True)
-# history = model.fit(input_train, output_train, validation_data = (input_test, output_test), epochs = 500, verbose = 2, batch_size = 10)
 history = model.fit(input_train, output_train, validation_data = (input_test, output_test), epochs = 1000, verbose = 2, callbacks = [es], batch_size = 10)
 
 # evaluate the keras model
