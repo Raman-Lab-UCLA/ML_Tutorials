@@ -23,7 +23,7 @@ outputExcelTest = output_test[i].reshape(1,96)[0][:]
 
 #Plot outputANN (prediction) and outputExcelTest (validation data)
 fig, ax = plt.subplots()
-ax.set(xlabel = 'Wavelength (μm)', ylabel = 'Absorption (A.U.)')
+ax.set(xlabel = 'Wavelength (μm)', ylabel = 'Absorption')
 ax.plot(x[0], outputExcelTest, label = 'ground truth', linewidth = 4.0)
 ax.plot(x[0], outputANN, label = 'predictions', linewidth = 4.0)
 plt.xlim(0.5,10)
