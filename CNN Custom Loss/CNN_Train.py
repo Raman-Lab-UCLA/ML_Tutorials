@@ -16,8 +16,8 @@ import keras.backend as K
 
 
 ## Define File Locations (Images, Spectra, and CNN Model Save)
-img_path = '/.../*.png'
-spectra_path = '/.../cross_length_interpolate_train.csv'
+img_path = '/.../Images_train/*.png'
+spectra_path = '/.../cross_length_train.csv'
 save_dir = '/.../model.h5'
 
 ## Load Images (CNN Input)
