@@ -1,1 +1,1 @@
-
+A simple fully-connected neural network or multilayer perceptron (MLP) for the analysis of multi-layered thin film stacks. Inputs are layer thicknesses (specified in the PPT) and outputs are the points in a reflection spectrum.
