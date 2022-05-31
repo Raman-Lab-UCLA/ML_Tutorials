@@ -1,7 +1,7 @@
 # first neural network with keras tutorial
-from keras.models import Sequential
-from keras.layers import Dense, ReLU
-from keras.callbacks.callbacks import EarlyStopping
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, ReLU
+from tensorflow.keras.callbacks.callbacks import EarlyStopping
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
@@ -25,6 +25,7 @@ model.add(ReLU())
 model.add(Dense(20))
 model.add(ReLU())
 model.add(Dense(96))
+model.summary()
 
 # compile the keras model
 model.compile(loss='mean_squared_error', optimizer='adam', metrics=['accuracy'])
@@ -38,7 +39,7 @@ score = model.evaluate(input_test, output_test)
 print('val_loss:', score[0])
 print('val_accuracy:', score[1])
 
-# Plot Losses
+# plot Losses
 fig, ax1 = plt.subplots()
 ax1.plot(history.history['loss'], color = 'b', label = 'Training Loss')
 ax1.plot(history.history['val_loss'], color = 'r', label = 'Validation Loss')
@@ -48,6 +49,5 @@ plt.ylim(0,0.01)
 plt.legend(loc = 'upper right')
 plt.show()
 
-
+# save model
 model.save('model.h5')
-model.summary()
