@@ -6,13 +6,12 @@ import os
 import glob
 import cv2
 import matplotlib.pyplot as plt
-from keras.models import Model
-from keras.layers import Input, Dense, BatchNormalization, LeakyReLU, Flatten
-from keras.layers import Conv2D, AveragePooling2D
-from keras.optimizers import Adam
-from keras.callbacks import EarlyStopping
-import keras.backend as K
-
+from tensorflow.keras.models import Model
+from tensorflow.keras.layers import Input, Dense, BatchNormalization, LeakyReLU, Flatten
+from tensorflow.keras.layers import Conv2D, AveragePooling2D
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.callbacks import EarlyStopping
+import tensorflow.keras.backend as K
 
 
 ## Define File Locations (Images, Spectra, and CNN Model Save)
