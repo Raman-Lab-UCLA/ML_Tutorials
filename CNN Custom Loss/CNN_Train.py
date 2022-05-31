@@ -42,7 +42,6 @@ CNN_output = np.array(np.float32(pd.read_csv(spectra_path, header = 0, index_col
 def custom_mean_squared_error(i):
     def loss(y_true, y_pred):
         total_loss = K.mean(K.square(y_true - y_pred), axis=-1)
-        #total_loss = data_loss 
         return total_loss
     return loss
 
