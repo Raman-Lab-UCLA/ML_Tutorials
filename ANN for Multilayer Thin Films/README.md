@@ -12,3 +12,5 @@ conda install matplotlib
 conda install pandas
 conda install spyder
 ```
+## Notes
+First time users of Spyder may run into issues of storing/referencing variables between scripts/runs. To fix this, go to Tools>Preferences>Run and tick in the box for "Run in consoles namespace instead of an empty one".
