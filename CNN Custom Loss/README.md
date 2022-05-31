@@ -6,8 +6,8 @@ For convenience, here are installation commands for the Conda distribution (afte
 ```
 conda create -n myenv python=3.7
 conda activate myenv
-conda install tensorflow
 conda install -c anaconda opencv
+conda install tensorflow
 conda install -c anaconda scikit-learn
 conda install matplotlib
 conda install pandas
