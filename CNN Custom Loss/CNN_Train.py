@@ -29,8 +29,6 @@ def loadImages(path):
         if os.path.isfile(os.path.splitext(os.path.join(path, imgdata))[0] + ".png"):
             img_array = cv2.imread(os.path.join(path, imgdata))
             img_array = np.float32(img_array)
-            #img_size = 40
-            #new_array = cv2.resize(img_array, (img_size, img_size))
             gray = cv2.cvtColor(img_array, cv2.COLOR_BGR2GRAY)       
             loadedImages.append(gray)
     return loadedImages
