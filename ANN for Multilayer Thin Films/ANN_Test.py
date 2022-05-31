@@ -4,13 +4,9 @@ Created on Thu Dec 19 12:18:22 2019
 
 @author: cyyeu
 """
-from keras.models import Sequential
-from keras.layers import Dense, Flatten
 import matplotlib.pyplot as plt
-import pandas as pd
 import numpy as np
-from sklearn.model_selection import train_test_split
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 
 #load model
 model = load_model('model.h5')
