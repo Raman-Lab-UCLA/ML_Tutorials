@@ -39,7 +39,7 @@ for i in range(len(imgs)):
     print(predictions_test1)
     
     fig, ax = plt.subplots()
-    ax.set(xlabel = 'Wavelength (nm)', ylabel = 'Absorption')
+    ax.set(xlabel = 'Wavelength (µm)', ylabel = 'Absorption')
     ax.plot(x[0], y[i].reshape(1,800)[0][:], label = 'Ground Truth', linewidth = 4.0)    
     ax.plot(x[0], predictions_test1.reshape(1,800)[0][:], label = 'Predictions', linewidth = 4.0)  
     
