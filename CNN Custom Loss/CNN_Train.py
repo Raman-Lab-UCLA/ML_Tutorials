@@ -94,7 +94,6 @@ history = model.fit(CNN_input_train, CNN_output_train, batch_size = batch_size, 
 score = model.evaluate(CNN_input_test, CNN_output_test, verbose=0)
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
-print(model.summary())
 model.save(save_dir)
 
 # Plot Losses
