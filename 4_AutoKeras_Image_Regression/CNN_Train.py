@@ -13,9 +13,8 @@ file = open('logFile.txt', 'w')
 sys.stdout = file
 
 ## Define File Locations (Images, Spectra, and CNN Model Save)
-img_path = 'C:/Users/ramanlab/Desktop/Kara/Explainability_for_Photonics-master/Training Data/Images/*.png'
-spectra_path = 'C:/Users/ramanlab/Desktop/Kara/Explainability_for_Photonics-master/Training Data/Spectra.csv'
-save_dir = 'C:/Users/ramanlab/Desktop/Kara/Explainability_for_Photonics-master/saved models/saved models/model.h5'
+img_path = 'C:/.../Training Data/Images/*.png'
+spectra_path = 'C:/.../Training Data/Spectra.csv'
 
 ## Load Images (CNN Input)
 def loadImages(path):
@@ -59,8 +58,6 @@ reg = ak.AutoModel(inputs=input_node, outputs=output_node, overwrite=True, max_t
 reg.fit(CNN_input_train, CNN_output_train, epochs=300)   #see if you can find doc on what last "train" is
 score = reg.evaluate(CNN_input_test, CNN_output_test)
 print('val_loss:', score[0])
-
-
 model = reg.export_model()
 model.save("model_autokeras", save_format="tf")
 model.summary()
