@@ -1,0 +1,14 @@
+Code for running AutoML (AutoKeras) for CNN model optimization.
+
+## Requirements
+For convenience, here are installation commands for the Conda distribution (after installing Anaconda: https://www.anaconda.com/products/individual).
+
+```
+conda create -n autokeras python=3.7
+conda activate autokeras
+conda install -c anaconda opencv
+pip install autokeras 
+conda install -c anaconda scikit-learn
+conda install matplotlib
+conda install spyder
+```
