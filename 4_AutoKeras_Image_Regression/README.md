@@ -12,4 +12,4 @@ conda install -c anaconda scikit-learn
 conda install matplotlib
 conda install spyder
 ```
-NOTE: AutoKeras is constantly updated and may depend on newer versions of Tensorflow. Document attached for setting up Tensorflow for GPU.
+NOTE: AutoKeras is constantly updated and may depend on newer versions of Tensorflow, which depend on specific versions of CUDA and cuDNN. Refer to the following for compatibility details: https://www.tensorflow.org/install/source#gpu.
