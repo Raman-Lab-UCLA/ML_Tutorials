@@ -26,12 +26,12 @@ def loadImages(path):
     return loadedImages
 
 # path = local path of images
-path = 'C:/Users/ramanlab/Desktop/Kara/Explainability_for_Photonics-master/Training Data/Images/*.png'
+path = 'C:/.../Training Data/Images/*.png'
 imgs = loadImages(path)
 imgs = np.array(imgs)
 
 for i in range(len(imgs)): 
-    y = np.array(pd.read_csv('C:/Users/ramanlab/Desktop/Kara/Explainability_for_Photonics-master/Training Data/Spectra.csv', header = 0, index_col=0))
+    y = np.array(pd.read_csv('C:/.../Training Data/Spectra.csv', header = 0, index_col=0))
     x = np.arange(4, 12, 0.1).reshape([1,80])
     predictions_test1 = model.predict(imgs[i].reshape(-1,imgs.shape[1],imgs.shape[1],1))
     print(predictions_test1)
@@ -43,5 +43,5 @@ for i in range(len(imgs)):
     plt.xlim(4,12)
     plt.ylim(0,1)
     plt.legend()
-    plt.savefig('C:/Users/ramanlab/Desktop/Kara/Explainability_for_Photonics-master/Test_Results/'+str(i)+'.png', bbox_inches="tight")
+    plt.savefig('C:/.../Test_Results/'+str(i)+'.png', bbox_inches="tight")
     plt.show()
